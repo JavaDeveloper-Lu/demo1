@@ -1,0 +1,37 @@
+databaseChangeLog:
+- changeSet:
+    id: demo-v1.0.0-20191030-1
+    author: daniel
+    changes:
+    - createTable:
+        columns:
+        - column:
+           autoIncrement: true
+           constraints:
+             nullable: false
+             primaryKey: true
+           name: s_id
+           type: INT
+        - column:
+           constraints:
+             nullable: false
+             unique: true
+           name: area_name
+           type: VARCHAR(200)
+        - column:
+            constraints:
+              nullable: false
+            name: priority
+            defaultValueNumeric: 0
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: create_time
+            type: DATETIME
+        - column:
+            constraints:
+              nullable: false
+            name: last_updated_time
+            type: DATETIME
+        tableName: tb_area
